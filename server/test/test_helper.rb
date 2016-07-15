@@ -11,6 +11,8 @@ rescue LoadError
 end
 
 require "minitest/autorun"
+require "minitest/pride"
+
 require "rack/test"
 
 db_configs = YAML.load_file(File.expand_path("./db/database.yml"))

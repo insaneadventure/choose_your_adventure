@@ -4,6 +4,7 @@ require "rubygems"
 require "bundler/setup"
 require "sinatra/base"
 require "json"
+require "pry"
 
 require "securerandom"
 require_relative "database_connection"
@@ -15,14 +16,24 @@ class AdventureGame < Sinatra::Base
     content_type "application/json"
   end
 
-  post "/login" do
-    token = SecureRandom.hex
-
-    User.create(token: token)
-
-    {token: token}.to_json
+  get "/" do
+    "Welcome to our insane adventure game"
   end
 
+  post "/login" do
+    token = SecureRandom.hex
+    user = User.create(token: token, name: params["name"])
+    user.to_json
+  end
+
+  get "/users" do
+    users = User.all
+    users.to_json
+  end
+
+  get "/user/:id" do
+
+  end
 
   run! if app_file == $PROGRAM_NAME
 end

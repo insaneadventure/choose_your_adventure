@@ -1,7 +1,7 @@
-class UserMigration < ActiveRecord::Migration
+class Stepmigration < ActiveRecord::Migration
   def up
-    drop_table :users if table_exists?(:users)
-    create_table :users do |t|
+    drop_table :steps if table_exists?(:steps)
+    create_table :steps do |t|
     t.string :name
     t.string :text
     t.string :option_a_text
@@ -9,12 +9,12 @@ class UserMigration < ActiveRecord::Migration
     t.string :option_b_text
     t.integer :option_b_step_id
     t.integer :adventure_id
-    t.timestamps :created_at
-    t.timestamps :updated_at
+    t.timestamps :created_at, null: true
+    t.timestamps :updated_at, null: true
     end
   end
 
   def down
-    drop_table :users if table_exists?(:users)
+    drop_table :steps if table_exists?(:steps)
   end
 end
