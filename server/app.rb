@@ -78,6 +78,17 @@ end
     choice.to_json
   end
 
+  get "/storyboard_pieces/:id" do
+    storyboard_pieces = Piece.where("storyboard_id = ?", params["id"]) # SELECT * FROM pieces WHERE storyboard_id = params[id]
+    storyboard_pieces.to_json
+  end
+
+  get "/piece_choices/:id" do
+      piece_choices = Choice.where("last_piece_id = ?", params["id"])
+      piece_choices.to_json
+    end
+
+
   #get "/adventure" do
     #binding.pry
     #adventure = Adventure.new

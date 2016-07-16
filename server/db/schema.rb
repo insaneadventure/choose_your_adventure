@@ -14,7 +14,6 @@
 ActiveRecord::Schema.define(version: 4) do
 
   create_table "choices", force: :cascade do |t|
-    t.string   "name"
     t.integer  "last_piece_id"
     t.string   "text"
     t.boolean  "start"

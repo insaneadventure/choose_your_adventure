@@ -42,3 +42,7 @@ Piece.create!(text:"And that was the story of Lily, the most asanine story ever"
 
 User.create!(name: "Chris")
 User.create!(name: "Lisa")
+
+
+Choice.create!(text: "You chose this path", last_piece_id: 1)
+Choice.create!(text: "Another interesting decision:", last_piece_id: 2)
