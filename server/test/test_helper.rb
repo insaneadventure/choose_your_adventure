@@ -16,7 +16,7 @@ require "minitest/pride"
 require "pry"
 require "rack/test"
 
-db_configs = YAML.load_file(File.expand_path("./db/database.yml"))
+db_configs = YAML.load_file(File.expand_path("./db/database.yml")) #added a dot.  should only be one 
 
 ActiveRecord::Base.establish_connection(
   db_configs[ENV["RACK_ENV"]]

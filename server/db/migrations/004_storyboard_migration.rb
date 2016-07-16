@@ -2,7 +2,7 @@ class StoryboardMigration < ActiveRecord::Migration
   def up
     drop_table :storyboards if table_exists?(:storyboards)
     create_table :storyboards do |t|
-
+        t.string :name
         t.timestamps :created_at, null: true
         t.timestamps :updated_at, null: true
     end
