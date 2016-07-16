@@ -48,7 +48,34 @@ end
   end
 
   get "/user/:id" do
-    
+    user = User.find(params["id"])
+    user.to_json
+  end
+
+
+  get "/storyboards" do
+    storyboards = Storyboard.all
+    storyboards.to_json
+  end
+
+  get "/storyboard/:id" do
+    storyboard = Storyboard.find(params["id"])
+    storyboard.to_json
+  end
+
+  get "/pieces" do
+    pieces = Piece.all
+    pieces.to_json
+  end
+
+  get "/piece/:id" do
+    piece = Piece.find(params["id"])
+    piece.to_json
+  end
+
+  get "/choice/:id" do
+    choice = Choice.find(params["id"])
+    choice.to_json
   end
 
   #get "/adventure" do
