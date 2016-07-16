@@ -14,13 +14,26 @@ require_relative "lib/choice"
 require_relative "lib/storyboard"
 
 class AdventureGame < Sinatra::Base
+#include HTTParty
+
+#def initialize
+
+
+#end
 
   before do
     content_type "application/json"
   end
 
+
+def get_adventure
+  puts "What adventure would you like to play today?"
+  adventure_choice = gets.chomp
+end
+
   get "/" do
     "Welcome to our insane adventure game"
+
   end
 
   post "/login" do
@@ -35,7 +48,7 @@ class AdventureGame < Sinatra::Base
   end
 
   get "/user/:id" do
-
+    
   end
 
   #get "/adventure" do

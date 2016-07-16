@@ -5,10 +5,18 @@ require_relative "lib/user"
 require_relative "lib/piece"
 require_relative "lib/choice"
 require_relative "lib/storyboard"
-require_relative "test/test_helper"
 
-Storyboard.create!#(name: "Upon")
-Storyboard.create!#(name: "Second")
+ENV["RACK_ENV"] = "development"
+
+db_configs = YAML.load_file(File.expand_path("./db/database.yml"))
+
+ActiveRecord::Base.establish_connection(
+ db_configs[ENV["RACK_ENV"]]
+)
+#require_relative "test/test_helper"
+
+Storyboard.create!(name: "Upon")
+Storyboard.create!(name: "Second")
 
 
 
@@ -31,3 +39,6 @@ Piece.create!(text:"Why dont we move to another story", storyboard_id: 2)
 Piece.create!(text:"What would a woodchuck chuck chuck, if a woodchuck could chuck wood? (not Lily thats for sure)", storyboard_id: 2)
 Piece.create!(text:"Toungue twisters aren't Lily's special suit either", storyboard_id: 2)
 Piece.create!(text:"And that was the story of Lily, the most asanine story ever", storyboard_id: 2)
+
+User.create!(name: "Chris")
+User.create!(name: "Lisa")

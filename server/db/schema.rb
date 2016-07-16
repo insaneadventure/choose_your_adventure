@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 4) do
   end
 
   create_table "storyboards", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
