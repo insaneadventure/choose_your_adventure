@@ -11,7 +11,7 @@ class UserMigration < ActiveRecord::Migration
     end
 
   end
-
+ 
 
   def down
     drop_table :users if table_exists?(:users)

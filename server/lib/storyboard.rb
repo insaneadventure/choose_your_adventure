@@ -3,9 +3,9 @@ require 'active_record'
 # Require your files
 
 
+class Storyboard < ActiveRecord::Base
 
-
-class User < ActiveRecord::Base
+has_many :pieces
 
 
 end

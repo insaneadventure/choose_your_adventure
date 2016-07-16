@@ -8,7 +8,10 @@ require "pry"
 
 require "securerandom"
 require_relative "database_connection"
-require_relative "lib/adventure"
+require_relative "lib/user"
+require_relative "lib/piece"
+require_relative "lib/choice"
+require_relative "lib/storyboard"
 
 class AdventureGame < Sinatra::Base
 
@@ -34,6 +37,24 @@ class AdventureGame < Sinatra::Base
   get "/user/:id" do
 
   end
+
+  #get "/adventure" do
+    #binding.pry
+    #adventure = Adventure.new
+    #return adventure
+  #end
+
+  #get "/adventure/:id" do
+
+  #end
+
+  #get "/step/:id" do
+
+  #end
+
+  #get "/step/next" do
+
+  #end
 
   run! if app_file == $PROGRAM_NAME
 end

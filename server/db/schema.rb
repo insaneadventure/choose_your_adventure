@@ -11,22 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 3) do
+ActiveRecord::Schema.define(version: 4) do
 
-  create_table "adventures", force: :cascade do |t|
+  create_table "choices", force: :cascade do |t|
     t.string   "name"
+    t.integer  "last_piece_id"
+    t.string   "text"
+    t.boolean  "start"
+    t.boolean  "end"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "steps", force: :cascade do |t|
-    t.string   "name"
+  create_table "pieces", force: :cascade do |t|
+    t.integer  "storyboard_id"
     t.string   "text"
-    t.string   "option_a_text"
-    t.integer  "option_a_step_id"
-    t.string   "option_b_text"
-    t.integer  "option_b_step_id"
-    t.integer  "adventure_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "storyboards", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

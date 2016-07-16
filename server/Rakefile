@@ -7,6 +7,43 @@ task :test do
   Dir.glob('./test/*_test.rb').each { |file| require file}
 end
 
+task :create_story do |t|
+  require './app'
+  end_step = Step.create(text: "You died", option_b_text: "" )
+  end_step.id
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Temporary switch to blank rake app, extract required tasks and import them to
 # current rake task. Skip seed loader here, as we do not need it for tests.
 

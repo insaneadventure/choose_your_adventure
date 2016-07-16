@@ -4,9 +4,10 @@ gem "sinatra"
 gem "activerecord", "~> 4.2.6"
 gem "rake"
 gem "sqlite3"
+gem "pry"
 
 group :test do
-  gem "pry"
+
   gem "minitest"
   gem "rack-test"
 end

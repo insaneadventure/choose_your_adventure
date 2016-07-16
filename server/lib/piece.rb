@@ -3,6 +3,9 @@ require 'active_record'
 # Require your files
 require_relative "user"
 
-module Adventure
 
+class Piece < ActiveRecord::Base
+
+has_many :choices
+belongs_to :storyboards
 end

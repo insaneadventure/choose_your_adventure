@@ -4,6 +4,7 @@ ENV["RACK_ENV"] = "test"
 
 require "rubygems"
 require "bundler/setup"
+require "active_record"
 
 begin
   require "pry"
@@ -12,7 +13,7 @@ end
 
 require "minitest/autorun"
 require "minitest/pride"
-
+require "pry"
 require "rack/test"
 
 db_configs = YAML.load_file(File.expand_path("./db/database.yml"))
